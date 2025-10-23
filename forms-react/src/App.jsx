@@ -12,7 +12,7 @@ function App() {
   // Single  Input
   return (
     <>
-      {/* <UsestateLearn /> */}
+      <UsestateLearn />
       <UseEffectLearn />
       
       {/* <MultipleInputs /> */}

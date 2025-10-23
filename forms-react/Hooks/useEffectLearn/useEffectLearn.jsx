@@ -22,15 +22,14 @@ const useEffectLearn = () => {
         console.log('Count changed', count);
     }, [count]);
 
+    
 
 
 
     return (
         <>
 
-            <h1>Count : {count}</h1>
-            <button onClick={() => setCount(count + 1)}>Increment</button>
-            <button onClick={() => setCount(count - 1)}>Decrement</button>
+            
         </>
     )
 }
