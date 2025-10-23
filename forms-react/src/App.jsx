@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import MultipleInputs from '../src/multipleInputs';
+import MultipleInputs from '../../formsInReact/multipleInputs';
 import map from './map';
-import UsestateLearn from '../useStateLearn/usestatelearn';
-import UseEffectLearn from '../useEffectLearn/useEffectLearn';
-import FetchApi from '../useEffectLearn/fetchApi';
+import UsestateLearn from '../../Hooks/useStateLearn/usestatelearn';
+import UseEffectLearn from '../../Hooks/useEffectLearn/useEffectLearn'
+import FetchApi from '../../Hooks/useEffectLearn/fetchApi';
 function App() {
 
 
@@ -13,8 +13,8 @@ function App() {
     <>
       {/* <UsestateLearn /> */}
       <UseEffectLearn />
-      <MultipleInputs />
-      <FetchApi />
+      {/* <MultipleInputs /> */}
+      {/* <FetchApi /> */}
     </>
   )
 }
