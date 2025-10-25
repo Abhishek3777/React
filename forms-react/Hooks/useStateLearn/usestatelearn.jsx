@@ -1,24 +1,24 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-function Counter() {
-  // const [state, setState] = useState(initialValue);
-  // state -> current value,   setState -> function to update the state
-  const [count, setCount] = useState(0);
+const usestatelearn = () => {
+  const [count, setCount] = useState(10);
 
-  function increaseCount() {
+
+  function inc() {
     setCount(count + 1);
   }
-  function decreaseCount() {
+  function dec() {
     setCount(count - 1);
   }
 
   return (
     <div>
-      <h1>Count : {count}</h1>
-      <button onClick={increaseCount}>Increment</button>
-      <button onClick={decreaseCount}>Decrement</button>
+      Count : {count}
+
+      <button onClick={inc}>Increment</button>
+      <button onClick={dec}>Decrement</button>
     </div>
-  );
+  )
 }
 
-export default Counter;
+export default usestatelearn

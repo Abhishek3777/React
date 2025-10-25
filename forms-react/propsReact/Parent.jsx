@@ -5,8 +5,9 @@ const Parent = () => {
     
     return (
         <div>
-            <h1>Parent Component</h1>
+            <h1 >Parent Component</h1>
             <ChildProp name='sammy'  age = '21'/>
+            add more difficult props
         </div>
     )
 }

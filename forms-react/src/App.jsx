@@ -22,8 +22,9 @@ function App() {
       <Conditional />
       <Lists />
 
+
       {/* <MultipleInputs /> */}
-      {/* <FetchApi /> */}
+      <FetchApi />
     </>
   )
 }
