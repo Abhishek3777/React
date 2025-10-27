@@ -13,3 +13,4 @@ const Parent = () => {
 }
 
 export default Parent
+// add more props
