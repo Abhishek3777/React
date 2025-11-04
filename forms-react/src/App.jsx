@@ -10,6 +10,8 @@ import Parent from '../propsReact/Parent';
 import Conditional from '../Conditional/Conditional';
 import Lists from '../List/Lists';
 import Todo from '../Projects/Todo';
+import Accordion from '../Projects/Accordion/index'
+
 function App() {
 
 
@@ -17,7 +19,8 @@ function App() {
   // Single  Input
   return (
     <>
-      <Todo/>
+      {/* <Todo/> */}
+      <Accordion />
 
 
       {/* <MultipleInputs /> */}
