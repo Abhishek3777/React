@@ -9,6 +9,7 @@ import ChildProp from '../propsReact/ChildProp';
 import Parent from '../propsReact/Parent';
 import Conditional from '../Conditional/Conditional';
 import Lists from '../List/Lists';
+import Todo from '../Projects/Todo';
 function App() {
 
 
@@ -16,15 +17,11 @@ function App() {
   // Single  Input
   return (
     <>
-      <UsestateLearn />
-      <UseEffectLearn />
-      <Parent />
-      <Conditional />
-      <Lists />
+      <Todo/>
 
 
       {/* <MultipleInputs /> */}
-      <FetchApi />
+      {/* <FetchApi /> */}
     </>
   )
 }

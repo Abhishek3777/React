@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 
 const usestatelearn = () => {
-  const [count, setCount] = useState(10);
-
+  const [count, setCount] = useState(0);
 
   function inc() {
     setCount(count + 1);
