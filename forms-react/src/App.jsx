@@ -10,7 +10,8 @@ import Parent from '../propsReact/Parent';
 import Conditional from '../Conditional/Conditional';
 import Lists from '../List/Lists';
 import Todo from '../Projects/Todo';
-import Accordion from '../Projects/Accordion/index'
+import Accordion from '../Projects/Accordion/index';
+import RandomColor from '../Projects/random-color/index'
 
 function App() {
 
@@ -20,9 +21,9 @@ function App() {
   return (
     <>
       {/* <Todo/> */}
-      <Accordion />
+      {/* <Accordion /> */}
 
-
+      <RandomColor />
       {/* <MultipleInputs /> */}
       {/* <FetchApi /> */}
     </>
