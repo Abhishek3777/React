@@ -12,6 +12,7 @@ import Lists from '../List/Lists';
 import Todo from '../Projects/Todo';
 import Accordion from '../Projects/Accordion/index';
 import RandomColor from '../Projects/random-color/index'
+import StarRating from '../Projects/star-rating/index';
 
 function App() {
 
@@ -22,8 +23,9 @@ function App() {
     <>
       {/* <Todo/> */}
       {/* <Accordion /> */}
+      <StarRating />
 
-      <RandomColor />
+      {/* <RandomColor /> */}
       {/* <MultipleInputs /> */}
       {/* <FetchApi /> */}
     </>

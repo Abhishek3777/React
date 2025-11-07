@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import data from './data';
-import './style.css'
 
 const index = () => {
-
   const [selected, setSelected] = useState(null);
 
   function showSingleFeature(id) {
@@ -14,28 +12,18 @@ const index = () => {
     <div className='wrapper'>
       <div className='accordian'>
         {
-          data && data.length > 0 ? (
-            data.map((dataItem) => (
-              <div className='item'>
-                <div className='title'>
-                  <h3>{dataItem.question}</h3>
-                  <span>
+          data && data.length > 0 ? data.map((dataItem) => (
+            <div key={dataItem.id}>
+              <h3>{dataItem.question}</h3>
+              <button onClick={() => showSingleFeature(dataItem.id)}>+</button>
+              {selected === dataItem.id ? dataItem.answer : null}
+            </div>
 
-                    <button onClick={() => showSingleFeature(dataItem.id)}>+</button></span>
-                  <div>
-                    {
-                      selected === dataItem.id ?
-                        <div className='content'> {dataItem.answer} </div> : null
-                    }
-                  </div>
-                </div> </div>
-            ))
-          )
-            : (<div> No data to be found </div>)
-
-
-        }
+          )) : (
+            <div> No data to be found </div>
+          )}
       </div>
+
     </div>
   )
 }
