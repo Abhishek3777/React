@@ -13,6 +13,7 @@ import Todo from '../Projects/Todo';
 import Accordion from '../Projects/Accordion/index';
 import RandomColor from '../Projects/random-color/index'
 import StarRating from '../Projects/star-rating/index';
+import ImageSlider from '../Projects/image-slider/index';
 
 function App() {
 
@@ -23,7 +24,8 @@ function App() {
     <>
       {/* <Todo/> */}
       {/* <Accordion /> */}
-      <StarRating />
+      {/* <StarRating /> */}
+      <ImageSlider url={`https://picsum.photos/v2/list`} limit={'5'} page={'1'} />
 
       {/* <RandomColor /> */}
       {/* <MultipleInputs /> */}
