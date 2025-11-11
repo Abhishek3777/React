@@ -14,7 +14,8 @@ import Accordion from '../Projects/Accordion/index';
 import RandomColor from '../Projects/random-color/index'
 import StarRating from '../Projects/star-rating/index';
 import ImageSlider from '../Projects/image-slider/index';
-import NewsApp from '../Projects/NewsApp/index'
+import NewsApp from '../Projects/NewsApp/index';
+import LoadMoreData from '../Projects/load-more-data/index';
 
 function App() {
 
@@ -27,7 +28,8 @@ function App() {
       {/* <Accordion /> */}
       {/* <StarRating /> */}
       {/* <ImageSlider url={`https://picsum.photos/v2/list`} limit={'5'} page={'1'} /> */}
-      <NewsApp />
+      {/* <NewsApp /> */}
+      <LoadMoreData />
       {/* <RandomColor /> */}
       {/* <MultipleInputs /> */}
       {/* <FetchApi /> */}
