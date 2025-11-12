@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from 'react';
 // import { dummyProducts } from './data';
 import axios from 'axios';
+import './style.css'
 
 const index = () => {
     const [loading, setLoading] = useState(false);
     const [products, setProducts] = useState([]);
     const [count, setCount] = useState(0);
+    const [disable, setDisable] = useState(false);
 
     async function fetchProducts() {
         try {
             setLoading(true);
-            const response = await axios.get(`https://dummyjson.com/products?limit=10&skip=${count === 0 ? 0 : count * 20
+            const response = await axios.get(`https://dummyjson.com/products?limit=20&skip=${count === 0 ? 0 : count * 20
                 }`);
             if (response && response.data.products && response.data.products.length) {
-                setProducts(response.data.products);
+                setProducts((prevData) => [...prevData, ...response.data.products]);
+                setLoading(false);
             }
-            setLoading(false);
+            console.log(response);
         }
         catch (e) {
             console.log(e.message);
@@ -25,17 +28,22 @@ const index = () => {
 
     useEffect(() => {
         fetchProducts();
-    }, []);
+    }, [count]);
+
+    useEffect(() => {
+        if (products && products.length === 100)
+            setDisable(true);
+    }, [products])
 
     if (loading)
         return <h1> Loading items ...</h1>
 
-    console.log(products);
+
 
     return (
-        <div className='container'>
+        <div className='load-more-container'>
             <div className='product-container'>
-                <h1>Products Data</h1>
+
                 {
                     loading && <h1> Loading items ...</h1>
                 }
@@ -44,10 +52,10 @@ const index = () => {
                     products && products.length ?
 
                         products.map((item) => (
-                            <div className='product' key={item.id}>
-                                <img src={item.thumbnail} alt={item.title} />
+                            <div className='product' key={`item.id`}>
+                                <img src={item.thumbnail} />
                                 <p>  {item.title} </p>
-                                <p>{item.description}</p>
+
                             </div>
                         ))
                         : null
@@ -55,7 +63,10 @@ const index = () => {
 
             </div>
             <div className='button-container'>
-                <button>Load More Products</button>
+                <button disabled={disable} onClick={() => setCount(count + 1)}>Load More Products</button>
+                {
+                    disable ? <p>You have reached to 100 products</p> : null
+                }
             </div>
         </div>
     )
