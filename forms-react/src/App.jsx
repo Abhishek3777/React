@@ -29,10 +29,10 @@ function App() {
       {/* <StarRating /> */}
       {/* <ImageSlider url={`https://picsum.photos/v2/list`} limit={'5'} page={'1'} /> */}
       {/* <NewsApp /> */}
-      <LoadMoreData />
+      {/* <LoadMoreData /> */}
       {/* <RandomColor /> */}
       {/* <MultipleInputs /> */}
-      {/* <FetchApi /> */}
+      <FetchApi />
     </>
   )
 }

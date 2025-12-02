@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios';
-
-const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 
 const index = () => {
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+
 
     const dummyNews = [
         {
@@ -26,58 +21,44 @@ const index = () => {
         },
     ];
 
-    async function fetchNews() {
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+
+    function fetchApi() {
         try {
             setLoading(true);
-            setError(null);
-            // const res = await axios.get("https://newsapi.org/v2/top-headlines", {
-            //     params: {
-            //         apiKey: API_KEY,
-            //     }
-            // })
             setData(dummyNews);
+            setLoading(false);
         }
         catch (err) {
-            setError(err.message);
-        }
-        finally {
-            setLoading(false);
+            setError(err);
+            console.log(err.message);
         }
     }
 
-
     useEffect(() => {
-        fetchNews();
-    }, [])
+        fetchApi();
+    }, []);
 
     if (loading)
-        return <h1> Please wait loading!</h1>
+        return <h1> Loading...</h1>
 
     if (error !== null)
-        return <h1>{error}</h1>
-
+        return <h1> {error}</h1>
 
     return (
         <div>
-            <h1>News App</h1>
             {
-                data && data.length > 0 ? (
-                    data.map((item, index) => (
-                        <div key={index} className='content'>
-                            <h2>{item.title}</h2>
+                data && data.length > 0 ?
+
+                    data.map((item) => (
+                        <div>
+                            <h3 key={item.key}>{data.title}</h3>
                             <p>{item.description}</p>
-                            {
-                                item.urlToImage && <img src={item.urlToImage} alt="image" style={{ width: "300px" }} />
-                            }
-
                         </div>
-                    )
-
-                    )
-
-                ) : (
-                    <p> No News Available</p>
-                )
+                    ))
+                    : <p>No Data found!</p>
             }
         </div>
     )

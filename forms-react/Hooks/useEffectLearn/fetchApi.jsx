@@ -1,36 +1,45 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 
 const fetchApi = () => {
-    const [data, setData] = useState([]);
+    const users1 = [
+        { id: 1, name: "Abhi" },
+        { id: 2, name: "Rohan" }
+    ];
+
+    const [users, setUsers] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    async function getUsers() {
+        try {
+            setLoading(true);
+            const res = await axios.get("https://jsonplaceholder.typicode.com/users");
+            setUsers(res.data);
+            setLoading(false);
+            console.log(res);
+        }
+        catch (err) {
+            console.log(err.message);
+            setLoading(false);
+        }
+    }
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
-                setData(response.data);
-            }
-            catch (err) {
-                console.log(err.message);
-            }
-        }
-        fetchData();
-
+        getUsers();
     }, [])
+
+    if (loading)
+        return <h1> ...Loading</h1>
 
     return (
         <div>
-            <div>
-                <h1>Posts</h1>
-                <ul>
-                    {data.map((post) => (
-                        <li key={post.id}>
-                            <strong>{post.title}</strong>
-                            <p>{post.body}</p>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+            <h1>Data : </h1>
+            <ul>
+                {users.map((user) => (
+                    <li key={user.id}>{user.name}</li>
+                ))}
+            </ul>
+
         </div>
     )
 }
