@@ -16,6 +16,11 @@ import StarRating from '../Projects/star-rating/index';
 import ImageSlider from '../Projects/image-slider/index';
 import NewsApp from '../Projects/NewsApp/index';
 import LoadMoreData from '../Projects/load-more-data/index';
+import { store } from "../Redux/store";
+import { Provider } from "react-redux";
+import Reduxfile from '../Redux/reduxFile';
+import Counter from '../interview-practice/counter';
+import ControlledText from '../interview-practice/controlledText';
 
 function App() {
 
@@ -24,15 +29,20 @@ function App() {
   // Single  Input
   return (
     <>
-      {/* <Todo/> */}
-      {/* <Accordion /> */}
-      {/* <StarRating /> */}
-      {/* <ImageSlider url={`https://picsum.photos/v2/list`} limit={'5'} page={'1'} /> */}
-      {/* <NewsApp /> */}
-      {/* <LoadMoreData /> */}
-      {/* <RandomColor /> */}
-      {/* <MultipleInputs /> */}
-      <FetchApi />
+      <Provider store={store} >
+        {/* <Todo/> */}
+        {/* <Accordion /> */}
+        {/* <StarRating /> */}
+        {/* <ImageSlider url={`https://picsum.photos/v2/list`} limit={'5'} page={'1'} /> */}
+        {/* <NewsApp /> */}
+        {/* <LoadMoreData /> */}
+        {/* <RandomColor /> */}
+        {/* <MultipleInputs /> */}
+        {/* <FetchApi />
+        <Reduxfile /> */}
+        {/* <Counter /> */}
+        <ControlledText/>
+      </Provider>
     </>
   )
 }
