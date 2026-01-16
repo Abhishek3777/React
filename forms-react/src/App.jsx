@@ -21,7 +21,8 @@ import { Provider } from "react-redux";
 import Reduxfile from '../Redux/reduxFile';
 import Counter from '../interview-practice/counter';
 import ControlledText from '../interview-practice/controlledText';
-
+import TodoApp from '../interview-practice/todo2';
+import FetchApi2 from '../interview-practice/fetchApi2';
 function App() {
 
 
@@ -41,7 +42,9 @@ function App() {
         {/* <FetchApi />
         <Reduxfile /> */}
         {/* <Counter /> */}
-        <ControlledText/>
+        {/* <ControlledText/> */}
+        {/* <TodoApp/> */}
+        <FetchApi2 />
       </Provider>
     </>
   )
